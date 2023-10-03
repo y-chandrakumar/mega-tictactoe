@@ -58,7 +58,7 @@ function choosebigcell(sbnum){
     }
     if(!freewill){
         for(let i=0;i<9;i++){
-            if(i!=sbnum){
+            if(i!=sbnum && sbd[i].id===""){
                 sbd[i].classList.add("disable-click");
             }
         }
@@ -180,7 +180,7 @@ createTicTacToeGrid();
                 let bbnum=Math.floor(clickedIndex/9);
                 let sbnum=clickedIndex%9;
                 checksbgameover(bbnum);
-                if(Aray[bbnum]===true){
+                if(Aray[sbnum]===true){
                 choosebigcell(sbnum);}
                
 
