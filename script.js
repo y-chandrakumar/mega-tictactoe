@@ -129,16 +129,53 @@ function checkbbgameover(){
              
              console.log("biggameover");
              isGameOver=true;
-              matter.innerHTML=cels[a].id+"Won";
+              matter.innerHTML=cels[a].id+" Won";
              
             animategrid(a,b,c,cels);
                
             return;    
             }
         }
-
+let xcount=0;
+ let ocount=0;
  for(let i=0;i<9;i++){
-       
+       if(cels[i].id===""){
+        return;
+        
+      }
+        if(cels[i].id==="X"){
+        xcount++;
+           }
+        if(cels[i].id==="O"){
+        ocount++;
+        }
+  }
+ if(xcount>ocount){
+ isGameOver=true;
+ matter.innerHTML="X Won";
+  
+ }
+  if(xcount<ocount){
+ isGameOver=true;
+ matter.innerHTML="O Won";
+ }
+ else if(xcount===ocount){
+   isGameOver=true;
+ matter.innerHTML=" DRAW  ";}
+ setTimeout(()=>{
+    for(let i=0;i<9;i++){
+    grid.removeChild(cels[i]);
+
+// const scell=cels[i].getElementsByClassName("smallcell");
+// for(let j=0;j<9;j++){
+//     scell[j].textContent="";
+// }
+}
+isGameOver=false;
+createTicTacToeGrid();
+
+
+},2000);
         return;
 }
 
