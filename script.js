@@ -15,6 +15,7 @@ let Aray = [true, true, true, true, true, true, true, true, true];
  
 // create the Tic-Tac-Toe grid
 function createTicTacToeGrid() {
+ matter.innerHTML=currentPlayer+"'s  Turn";
     Aray = [true, true, true, true, true, true, true, true, true];
     play.style.display="none";
     grid.style.display = "grid"; 
@@ -22,7 +23,6 @@ function createTicTacToeGrid() {
         const bigcel = document.createElement("div");
         bigcel.classList.add("bigcell");
         bigcel.id="";
-        // bigcell.id.add(i);
         bigcel.textContent = "";
         grid.appendChild(bigcel);
     }
@@ -33,7 +33,6 @@ function createTicTacToeGrid() {
             const smallcel = document.createElement("div");
             smallcel.id = 9*i+j;
             smallcel.classList.add("smallcell");
-            // bigcell.id.add(i);
             smallcel.textContent = "";
             cels[i].appendChild(smallcel);
         }
@@ -130,14 +129,15 @@ function checkbbgameover(){
              
              console.log("biggameover");
              isGameOver=true;
-             console.log("a",cels[a].id);
-             console.log("b",cels[b].id);
-             console.log("c",cels[c].id);
+              matter.innerHTML=cels[a].id+"Won";
+             
             animategrid(a,b,c,cels);
                
             return;    
             }
         }
+
+ for(let i=0;i<9;i++){
        
         return;
 }
@@ -204,6 +204,6 @@ createTicTacToeGrid();
       
         play.addEventListener("click", () => {
             createTicTacToeGrid();
-            matter.innerHTML=currentPlayer+"'s  Turn";
+            
         });
         
