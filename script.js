@@ -5,14 +5,11 @@ const smallcell = document.querySelectorAll(".smallcell");
 const bigcell = document.querySelectorAll(".bigcell");
 let matter=document.getElementById("text");
 
-
 let currentPlayer = "X";
 let isGameOver = false;
 let freewill=true;
 let Aray = [true, true, true, true, true, true, true, true, true];
 
-
- 
 // create the Tic-Tac-Toe grid
 function createTicTacToeGrid() {
  matter.innerHTML=currentPlayer+"'s  Turn";
@@ -233,12 +230,6 @@ createTicTacToeGrid();
                
             }
         });
-        
-       
-
-
-          
-      
         play.addEventListener("click", () => {
             createTicTacToeGrid();
             
