@@ -243,4 +243,41 @@ createTicTacToeGrid();
             createTicTacToeGrid();
             
         });
+
+
+        let darkmode=localStorage.getItem("darkmode");
+const darkmodetoggle=document.getElementById("toggle");
+
+
+const enabledarkmode = ()=>{
+    let imgElement=document.getElementById("toggle");
+    imgElement.setAttribute("src", "files/toggle-on-solid.svg");
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("darkmode","enabled");
+
+};
+const disabledarkmode =()=>{
+    let imgElement=document.getElementById("toggle");
+    imgElement.setAttribute("src", "files/toggle-off-solid.svg");
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("darkmode",null);
+
+};
+
+if(darkmode==="enabled"){
+    enabledarkmode();
+    
+}
+darkmodetoggle.addEventListener("click", ()=>{
+    darkmode=localStorage.getItem("darkmode");
+    console.log(darkmode)
+   
+    if(darkmode!=="enabled"){
+        enabledarkmode();
+    }
+    else{
+        disabledarkmode();
+    }
+    
+});
         
