@@ -1,10 +1,21 @@
-
+body{
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+.dark-mode {
+    background-color: black;
+}
 .start-div {
     text-align: center;
     margin-top: 4vw; 
 }
 .mater{
     font-size: 3vw;
+    color:black;
+}
+.dark-mode .mater{
+    color: white;
 }
 .grid {
     
@@ -13,21 +24,29 @@
     gap: 0.5vw; 
     margin: 5vw auto;
     width: 31.6vw;
-   
-
 }
-
+.imm{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline;
+    cursor: pointer;
+}
 .bigcell {
     width: 10vw;
     height: 10vw; 
     border: 0.1vw solid black;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
+    color: black;
     margin: auto auto;
     font-size: 7vw;
     align-items: center;
     justify-content: center;
+}
+.dark-mode .bigcell{
+    border:0.1vw solid white ;
+    color: white;
 }
   
 
@@ -36,7 +55,7 @@
     height: 3vw;
     border: 0.01px solid black; 
     margin: auto auto;
- 
+    color: black;
     display: flex;
   
     align-items: center;
@@ -44,12 +63,25 @@
     font-size: 1.5vw; 
     cursor: pointer; 
 }
+.dark-mode .smallcell{
+    border: 0.01px solid white; 
+    color: white;   
+}
+.buttons{
+    display: grid;
+    margin:  auto;
+    align-items: center;
+    justify-content:center; 
+    height: 50vh;
+    
+    
 
+}
 .disable-click {
     cursor: not-allowed;
     opacity: 0.5;
     pointer-events: none; 
-    filter: blur(1px);
+    filter: blur(2px);
 }
 .winning-cell {
    
@@ -64,9 +96,13 @@
     font-size: 7vw;
 }
 .btn {
-    cursor: pointer; 
-    margin: 15vw auto;
-   
+    cursor: pointer;
+    background-color: rgb(224, 216, 216);
+    color: black;
+}
+.dark-mode .btn{
+    background-color: rgb(35, 39, 39);
+    color: white;
 }
 
 @media (max-width: 768px) {
