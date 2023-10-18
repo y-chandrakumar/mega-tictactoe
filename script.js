@@ -159,21 +159,22 @@ let xcount=0;
  else if(xcount===ocount){
    isGameOver=true;
  matter.innerHTML=" DRAW  ";}
- setTimeout(()=>{
-    for(let i=0;i<9;i++){
-    grid.removeChild(cels[i]);
 
-// const scell=cels[i].getElementsByClassName("smallcell");
-// for(let j=0;j<9;j++){
-//     scell[j].textContent="";
-// }
+ drawanimate(cels);     
 }
-isGameOver=false;
-createTicTacToeGrid();
 
-
-},2000);
-        return;
+function drawanimate(cels){
+    setTimeout(() => {
+        for (let i = 0; i < 9; i++) {
+          grid.removeChild(cels[i]);
+    
+        
+        }
+        isGameOver = false;
+        createTicTacToeGrid();
+      }, 2000);
+    
+    
 }
 
 function animategrid(a,b,c,cels){
