@@ -1,8 +1,6 @@
 const play = document.getElementById("btn-one");
 const gameDiv = document.querySelector(".game-div");
 const grid = document.querySelector(".grid");
-const smallcell = document.querySelectorAll(".smallcell");
-const bigcell = document.querySelectorAll(".bigcell");
 let matter=document.getElementById("text");
 
 let currentPlayer = "X";
@@ -185,10 +183,6 @@ setTimeout(()=>{
     for(let i=0;i<9;i++){
     grid.removeChild(cels[i]);
 
-// const scell=cels[i].getElementsByClassName("smallcell");
-// for(let j=0;j<9;j++){
-//     scell[j].textContent="";
-// }
 }
 isGameOver=false;
 createTicTacToeGrid();
